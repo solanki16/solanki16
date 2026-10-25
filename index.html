@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    /* Apply the saved or system theme before first paint (see site.js). */
+    (() => {
+      let theme = null;
+      try { theme = localStorage.getItem('theme'); } catch { /* storage blocked */ }
+      if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <title>Vasu Solanky — Data Science &amp; Machine Learning</title>
+  <meta name="description" content="B.Tech CSE (Data Science) student at Amity University, class of 2027, in Delhi. Projects in computer vision, LLM applications and document AI on AWS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vasu Solanky — Data Science &amp; Machine Learning" />
+  <meta property="og:description" content="B.Tech CSE (Data Science) student at Amity University, class of 2027, in Delhi. Projects in computer vision, LLM applications and document AI on AWS." />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vasu Solanky, data science and machine learning: B.Tech CSE (Data Science), Amity University ’27" />
+  <meta property="og:site_name" content="Vasu Solanky" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vasu Solanky — Data Science &amp; Machine Learning" />
+  <meta name="twitter:description" content="B.Tech CSE (Data Science) student at Amity University, class of 2027, in Delhi. Projects in computer vision, LLM applications and document AI on AWS." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vasu Solanky",
+    "jobTitle": "Computer Science & Engineering (Data Science) student",
+    "email": "mailto:solankyvasu@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Delhi",
+      "addressCountry": "IN"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Amity University, Noida"
+    },
+    "knowsAbout": [
+      "Data analysis",
+      "Machine learning",
+      "Computer vision",
+      "Large language model applications",
+      "AWS serverless"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/vasu-solanky85a85a24b"
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/geist-pixel-square.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="importmap">
+    {
+      "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.min.js" },
+      "integrity": {
+        "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.min.js": "sha384-QHQk1LzjJlJYNdthXjKCmffpDRZL3EqJ7LfqBzyKyvGgjAYM2ZVuYtFGg42NcAJ/",
+        "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.core.min.js": "sha384-rx+KIp/9ptjArhnFAcpVoOc/ynktDsRtRJKIbC7YVKylEvFu8sgmzk9RmQ+CIV48"
+      }
+    }
+  </script>
+  <script type="module" src="decrypt.js"></script>
+  <script type="module" src="hero3d.js"></script>
+  <script type="module" src="hero2d.js"></script>
+  <script type="module" src="scenes3d.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+
+  <!-- chrome:nav:start -->
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a href="index.html" class="nav-logo"><svg class="nav-mark" focusable="false" viewBox="-5.1 -33.9 52.2 39" fill="currentColor" aria-hidden="true"><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="2.1"/><circle cx="3.6" cy="-18" r="2.1"/><circle cx="2.4" cy="-12" r="2.1"/><circle cx="1.2" cy="-6" r="2.1"/><circle cx="6.2" cy="-0.8" r="2.1"/><circle cx="13.6" cy="-7.6" r="2.1"/><circle cx="14.8" cy="-13.6" r="2.1"/><circle cx="16" cy="-19.6" r="2.1"/><circle cx="17.2" cy="-25.6" r="2.1"/><circle cx="42" cy="-28.8" r="2.1"/><circle cx="35.8" cy="-28" r="2.1"/><circle cx="29.6" cy="-27.2" r="2.1"/><circle cx="28.4" cy="-21.2" r="2.1"/><circle cx="27.2" cy="-15.2" r="2.1"/><circle cx="33.4" cy="-16" r="2.1"/><circle cx="39.6" cy="-16.8" r="2.1"/><circle cx="38.4" cy="-10.8" r="2.1"/><circle cx="37.2" cy="-4.8" r="2.1"/><circle cx="31" cy="-4" r="2.1"/><circle cx="24.8" cy="-3.2" r="2.1"/></g></svg><span>Vasu Solanky</span></a>
+    <ul class="nav-links">
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-resume" href="resume.pdf" type="application/pdf">Résumé</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M12 3.75a8.25 8.25 0 0 0 0 16.5z" fill="currentColor" />
+        </svg>
+      </button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- chrome:nav:end -->
+
+  <!-- chrome:menu:start -->
+  <nav class="mob-menu" id="mobMenu" aria-label="Mobile">
+    <a href="projects.html" class="mob-item">Work</a>
+    <a href="#experience" class="mob-item">Experience</a>
+    <a href="#about" class="mob-item">About</a>
+    <a href="#contact" class="mob-item">Contact</a>
+    <a href="resume.pdf" class="mob-item mob-item-resume" type="application/pdf">Résumé (PDF)</a>
+  </nav>
+  <!-- chrome:menu:end -->
+
+  <main id="main" tabindex="-1">
+
+  <section class="hero" id="hero" aria-labelledby="heroTitle">
+    <div class="hero-field" aria-hidden="true">
+      <div class="hero-poster"></div>
+      <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    </div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">~/ Turning messy data into structured answers.</p>
+      <h1 class="hero-title" id="heroTitle">
+        <span class="visually-hidden">Vasu Solanky</span>
+        <span class="hero-name" aria-hidden="true" data-decrypt><span class="hero-line">Vasu</span><span class="hero-line">Solanky</span></span>
+      </h1>
+      <p class="hero-role">Data science &amp; ML · B.Tech CSE (Data Science), Amity University&nbsp;’27 · Delhi,&nbsp;India</p>
+      <p class="hero-lead">
+        I build data and AI pipelines: a CNN that tags movie genres from posters, an <strong>LLM meeting assistant</strong>
+        that turns transcripts into decisions and tasks, and a serverless AWS pipeline that pulls structured fields out of invoices and PDFs.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">View work</a>
+        <a class="btn btn-secondary" href="resume.pdf" type="application/pdf">Résumé (PDF)</a>
+        <a class="btn btn-ghost" href="mailto:solankyvasu@gmail.com">solankyvasu@gmail.com</a>
+      </div>
+    </div>
+    <button class="hero-pause" type="button" data-motion-toggle aria-label="Pause hero animation" aria-pressed="false" hidden>
+      <svg class="icon-pause" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M4 3h3v10H4zM9 3h3v10H9z" fill="currentColor" /></svg>
+      <svg class="icon-play" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 3l8 5-8 5z" fill="currentColor" /></svg>
+    </button>
+  </section>
+
+  <div class="now-strip">
+    <div class="container now-inner">
+      <p class="now-label">Now</p>
+      <p class="now-text">B.Tech, Computer Science &amp; Engineering (Data Science) <span aria-hidden="true">·</span> Amity University, Noida <span aria-hidden="true">·</span> 2022 – 2027</p>
+    </div>
+  </div>
+
+  <!-- ── WORK ───────────────────────────────────────── -->
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="container">
+      <div class="sec-rail" aria-hidden="true"><span class="sec-rail-label"><b>01</b> Selected work</span></div>
+      <header class="section-head">
+        <p class="eyebrow"><span class="sec-num" aria-hidden="true">01</span>~/work</p>
+        <h2 class="section-title" id="work-title">Selected work</h2>
+        <a class="section-link" href="projects.html">All 3 projects <span aria-hidden="true">→</span></a>
+      </header>
+      <div class="work-list">
+        <article class="work-row">
+          <figure class="work-media term" data-scene="genres" aria-label="Classifier outline">
+            <figcaption class="term-bar"><span class="term-dots" aria-hidden="true"></span>genres.sketch<button class="scene-pause" type="button" data-motion-toggle aria-label="Pause 3D animation" aria-pressed="false" hidden><svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path d="M4 3h3v10H4zM9 3h3v10H9z" fill="currentColor" /></svg><svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path d="M5 3l8 5-8 5z" fill="currentColor" /></svg></button></figcaption>
+            <div class="term-scene" aria-hidden="true"></div>
+            <ol class="term-steps">
+              <li><span class="term-k">in</span> <span class="term-v">movie poster image</span></li>
+              <li><span class="term-k">model</span> <span class="term-v">CNN in TensorFlow/Keras</span></li>
+              <li><span class="term-k">out</span> <span class="term-v">several genres at once, each with a confidence score</span></li>
+              <li><span class="term-k">app</span> <span class="term-v">Flask upload page</span></li>
+            </ol>
+          </figure>
+          <div class="work-body">
+            <p class="work-meta">Computer vision · multi-label classification</p>
+            <h3 class="work-title">Movie genres from posters, several at a time</h3>
+            <p class="work-desc">A Flask web app where you upload a movie poster and get back its predicted genres, each with a confidence score, from a convolutional neural network trained in TensorFlow/Keras. Multi-label: one poster can belong to several genres.</p>
+            <ul class="tags" aria-label="Stack"><li>Python</li><li>TensorFlow/Keras</li><li>CNN</li><li>Flask</li><li>Computer vision</li></ul>
+          </div>
+        </article>
+        <article class="work-row">
+          <figure class="work-media term" data-scene="meeting" aria-label="Assistant outline">
+            <figcaption class="term-bar"><span class="term-dots" aria-hidden="true"></span>meeting.sketch<button class="scene-pause" type="button" data-motion-toggle aria-label="Pause 3D animation" aria-pressed="false" hidden><svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path d="M4 3h3v10H4zM9 3h3v10H9z" fill="currentColor" /></svg><svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path d="M5 3l8 5-8 5z" fill="currentColor" /></svg></button></figcaption>
+            <div class="term-scene" aria-hidden="true"></div>
+            <ol class="term-steps">
+              <li><span class="term-k">in</span> <span class="term-v">meeting transcript</span></li>
+              <li><span class="term-k">api</span> <span class="term-v">FastAPI back end</span></li>
+              <li><span class="term-k">llm</span> <span class="term-v">OpenAI API</span></li>
+              <li><span class="term-k">ui</span> <span class="term-v">React front end</span></li>
+              <li><span class="term-k">out</span> <span class="term-v">summary · key decisions · tasks</span></li>
+            </ol>
+          </figure>
+          <div class="work-body">
+            <p class="work-meta">LLM application · AWS</p>
+            <h3 class="work-title">AI meeting summarizer and action tracker</h3>
+            <p class="work-desc">An AI meeting assistant that turns transcripts into concise summaries, key decisions and actionable tasks: a React front end over a FastAPI service that calls the OpenAI API, deployed on AWS.</p>
+            <p class="work-evidence">Cut manual meeting-note preparation by 80% across 200+ test meetings.</p>
+            <ul class="tags" aria-label="Stack"><li>Python</li><li>FastAPI</li><li>React</li><li>OpenAI API</li><li>AWS</li></ul>
+          </div>
+        </article>
+        <article class="work-row">
+          <figure class="work-media term" data-scene="docs" aria-label="Pipeline outline">
+            <figcaption class="term-bar"><span class="term-dots" aria-hidden="true"></span>documents.sketch<button class="scene-pause" type="button" data-motion-toggle aria-label="Pause 3D animation" aria-pressed="false" hidden><svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path d="M4 3h3v10H4zM9 3h3v10H9z" fill="currentColor" /></svg><svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path d="M5 3l8 5-8 5z" fill="currentColor" /></svg></button></figcaption>
+            <div class="term-scene" aria-hidden="true"></div>
+            <ol class="term-steps">
+              <li><span class="term-k">in</span> <span class="term-v">invoices and PDFs</span></li>
+              <li><span class="term-k">store</span> <span class="term-v">AWS S3</span></li>
+              <li><span class="term-k">run</span> <span class="term-v">AWS Lambda, serverless</span></li>
+              <li><span class="term-k">ocr</span> <span class="term-v">AWS Textract</span></li>
+              <li><span class="term-k">out</span> <span class="term-v">structured fields</span></li>
+            </ol>
+          </figure>
+          <div class="work-body">
+            <p class="work-meta">Document AI · serverless</p>
+            <h3 class="work-title">Cloud-based document intelligence system</h3>
+            <p class="work-desc">A serverless document-processing pipeline that extracts structured information from invoices and PDFs with AWS Textract and Lambda, with a Flask layer on top.</p>
+            <p class="work-evidence">94% field-level extraction accuracy across 2,000+ documents.</p>
+            <ul class="tags" aria-label="Stack"><li>Python</li><li>AWS S3</li><li>AWS Lambda</li><li>Textract</li><li>Flask</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ─────────────────────────────────── -->
+  <section class="section experience" id="experience" aria-labelledby="experience-title">
+    <div class="container">
+      <div class="sec-rail" aria-hidden="true"><span class="sec-rail-label"><b>02</b> Experience</span></div>
+      <header class="section-head">
+        <p class="eyebrow"><span class="sec-num" aria-hidden="true">02</span>~/experience</p>
+        <h2 class="section-title" id="experience-title">Experience</h2>
+        <a class="section-link" href="resume.pdf" type="application/pdf">Résumé (PDF)</a>
+      </header>
+      <ol class="timeline">
+        <li class="tl-item">
+          <p class="tl-years">Work</p>
+          <div class="tl-body">
+            <h3 class="tl-role">Gheo Organics LLP</h3>
+            <p class="tl-org">Data analytics · organic products brand · Delhi</p>
+            <p class="tl-detail">Analysed sales and marketing data with SQL and Power BI to support digital marketing strategy decisions. Built reports and dashboards to track marketing performance metrics, turning raw data into actionable insights for the team, and contributed data-backed recommendations to a project on digital marketing strategies for organic product brands.</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <p class="tl-years">2022 – 2027</p>
+          <div class="tl-body">
+            <h3 class="tl-role">B.Tech, Computer Science &amp; Engineering (Data Science)</h3>
+            <p class="tl-org">Amity University, Noida</p>
+            <p class="tl-detail">Before that: CBSE Class XII (2022) and Class X (2020), Vivekanand Public School, Delhi.</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <p class="tl-years">Volunteering</p>
+          <div class="tl-body">
+            <h3 class="tl-role">Volunteer, Charity Hat NGO</h3>
+            <p class="tl-org">Delhi</p>
+            <p class="tl-detail">Assisted in community outreach programmes and social initiatives.</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <p class="tl-years">2023</p>
+          <div class="tl-body">
+            <h3 class="tl-role">Participant, Mr. Amity</h3>
+            <p class="tl-org">Amity Youth Fest 2023</p>
+            <p class="tl-detail">Took part in Mr. Amity at the university’s youth festival.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────── -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="sec-rail" aria-hidden="true"><span class="sec-rail-label"><b>03</b> About</span></div>
+      <header class="section-head">
+        <p class="eyebrow"><span class="sec-num" aria-hidden="true">03</span>~/about</p>
+        <h2 class="section-title" id="about-title">About</h2>
+      </header>
+      <div class="about-grid">
+        <div class="about-body">
+          <p class="about-lead">I’m a Computer Science &amp; Engineering (Data Science) student at Amity University, Noida (2022–2027), based in Delhi.</p>
+          <p>My work sits where data meets products: analysing sales and marketing data with SQL and Power BI, training a CNN for multi-label image classification, and building LLM and AWS pipelines that turn unstructured transcripts and documents into structured, usable output.</p>
+
+          <dl class="stats">
+            <div><dt>Field-level extraction accuracy, 2,000+ documents</dt><dd>94%</dd></div>
+            <div><dt>Less manual note prep, 200+ test meetings</dt><dd>80%</dd></div>
+            <div><dt>End-to-end ML and AI projects</dt><dd>3</dd></div>
+          </dl>
+
+          <h3 class="sub-h">Certifications</h3>
+          <ul class="tags" aria-label="Certifications">
+            <li>Microsoft Excel</li><li>Machine Learning with Python</li><li>Build a Firebase Android Application</li><li>Introduction to Java Programming: Java Fundamental Concepts</li><li>Introduction to Python</li>
+          </ul>
+
+          <h3 class="sub-h">Toolbox</h3>
+          <dl class="toolbox">
+            <div><dt>Languages</dt><dd>Python, JavaScript, TypeScript, Java, C, C++, SQL</dd></div>
+            <div><dt>AI / ML</dt><dd>TensorFlow, PyTorch, scikit-learn, spaCy, OpenCV, NLP, AWS SageMaker</dd></div>
+            <div><dt>Data &amp; BI</dt><dd>SQL, Power BI · MongoDB, MySQL, PostgreSQL, BigQuery</dd></div>
+            <div><dt>Web</dt><dd>HTML5, CSS3, React.js, Next.js, Tailwind CSS, Bootstrap, Streamlit, WordPress · Node.js, Express.js, Flask, Django, REST APIs</dd></div>
+            <div><dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, S3, IAM, RDS, CloudWatch), Docker, Kubernetes, Terraform, CI/CD, Linux, Git, GitHub, Postman</dd></div>
+          </dl>
+
+          <p class="about-links">
+            <a class="text-link" href="https://www.linkedin.com/in/vasu-solanky85a85a24b" rel="me">LinkedIn <span aria-hidden="true">↗</span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────── -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-inner">
+      <div class="sec-rail" aria-hidden="true"><span class="sec-rail-label"><b>04</b> Contact</span></div>
+      <div class="contact-mark" aria-hidden="true"><svg class="contact-mark-svg" focusable="false" viewBox="-5.1 -33.9 52.2 39" fill="currentColor" aria-hidden="true"><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="2.1"/><circle cx="3.6" cy="-18" r="2.1"/><circle cx="2.4" cy="-12" r="2.1"/><circle cx="1.2" cy="-6" r="2.1"/><circle cx="6.2" cy="-0.8" r="2.1"/><circle cx="13.6" cy="-7.6" r="2.1"/><circle cx="14.8" cy="-13.6" r="2.1"/><circle cx="16" cy="-19.6" r="2.1"/><circle cx="17.2" cy="-25.6" r="2.1"/><circle cx="42" cy="-28.8" r="2.1"/><circle cx="35.8" cy="-28" r="2.1"/><circle cx="29.6" cy="-27.2" r="2.1"/><circle cx="28.4" cy="-21.2" r="2.1"/><circle cx="27.2" cy="-15.2" r="2.1"/><circle cx="33.4" cy="-16" r="2.1"/><circle cx="39.6" cy="-16.8" r="2.1"/><circle cx="38.4" cy="-10.8" r="2.1"/><circle cx="37.2" cy="-4.8" r="2.1"/><circle cx="31" cy="-4" r="2.1"/><circle cx="24.8" cy="-3.2" r="2.1"/></g></svg></div>
+      <p class="eyebrow"><span class="sec-num" aria-hidden="true">04</span>~/contact</p>
+      <h2 class="contact-title" id="contact-title">Let’s build something with data.</h2>
+      <p class="contact-lead">Working on a data, ML or AI problem, or have a role to talk about? Email is the fastest way to reach me.</p>
+      <div class="contact-cta">
+        <a class="email-big" href="mailto:solankyvasu@gmail.com">solankyvasu@gmail.com</a>
+        <button class="btn btn-secondary copy-email" id="copyEmail" type="button">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></svg>
+          <span>Copy address</span>
+        </button>
+      </div>
+      <dl class="contact-list">
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/vasu-solanky85a85a24b" rel="me">linkedin.com/in/vasu-solanky85a85a24b</a></dd></div>
+        <div><dt>Location</dt><dd>Delhi, India</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- chrome:footer:start -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-id">
+        <a class="footer-logo" href="index.html"><svg class="footer-mark" focusable="false" viewBox="-5.1 -33.9 52.2 39" fill="currentColor" aria-hidden="true"><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="2.1"/><circle cx="3.6" cy="-18" r="2.1"/><circle cx="2.4" cy="-12" r="2.1"/><circle cx="1.2" cy="-6" r="2.1"/><circle cx="6.2" cy="-0.8" r="2.1"/><circle cx="13.6" cy="-7.6" r="2.1"/><circle cx="14.8" cy="-13.6" r="2.1"/><circle cx="16" cy="-19.6" r="2.1"/><circle cx="17.2" cy="-25.6" r="2.1"/><circle cx="42" cy="-28.8" r="2.1"/><circle cx="35.8" cy="-28" r="2.1"/><circle cx="29.6" cy="-27.2" r="2.1"/><circle cx="28.4" cy="-21.2" r="2.1"/><circle cx="27.2" cy="-15.2" r="2.1"/><circle cx="33.4" cy="-16" r="2.1"/><circle cx="39.6" cy="-16.8" r="2.1"/><circle cx="38.4" cy="-10.8" r="2.1"/><circle cx="37.2" cy="-4.8" r="2.1"/><circle cx="31" cy="-4" r="2.1"/><circle cx="24.8" cy="-3.2" r="2.1"/></g></svg><span>Vasu Solanky</span></a>
+        <p class="footer-copy">© <span data-year>2026</span> Vasu Solanky · B.Tech CSE (Data Science) · Amity University ’27</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h2 class="footer-h">Contact</h2>
+          <ul>
+            <li><a href="mailto:solankyvasu@gmail.com">solankyvasu@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/vasu-solanky85a85a24b" rel="me">LinkedIn</a></li>
+            <li><a href="resume.pdf" type="application/pdf">Résumé (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- chrome:footer:end -->
+
+  <script src="site.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

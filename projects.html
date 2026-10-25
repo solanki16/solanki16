@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    /* Apply the saved or system theme before first paint (see site.js). */
+    (() => {
+      let theme = null;
+      try { theme = localStorage.getItem('theme'); } catch { /* storage blocked */ }
+      if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <title>Projects — Vasu Solanky</title>
+  <meta name="description" content="Three projects by Vasu Solanky: movie genre classification from posters, an AI meeting summarizer and action tracker, and a cloud document intelligence system." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projects — Vasu Solanky" />
+  <meta property="og:description" content="Three projects by Vasu Solanky: movie genre classification from posters, an AI meeting summarizer and action tracker, and a cloud document intelligence system." />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vasu Solanky, data science and machine learning: B.Tech CSE (Data Science), Amity University ’27" />
+  <meta property="og:site_name" content="Vasu Solanky" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects — Vasu Solanky" />
+  <meta name="twitter:description" content="Three projects by Vasu Solanky: movie genre classification from posters, an AI meeting summarizer and action tracker, and a cloud document intelligence system." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- chrome:nav:start -->
+  <nav class="nav scrolled" id="nav" data-solid aria-label="Primary">
+    <a href="index.html" class="nav-logo"><svg class="nav-mark" focusable="false" viewBox="-5.1 -33.9 52.2 39" fill="currentColor" aria-hidden="true"><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="2.1"/><circle cx="3.6" cy="-18" r="2.1"/><circle cx="2.4" cy="-12" r="2.1"/><circle cx="1.2" cy="-6" r="2.1"/><circle cx="6.2" cy="-0.8" r="2.1"/><circle cx="13.6" cy="-7.6" r="2.1"/><circle cx="14.8" cy="-13.6" r="2.1"/><circle cx="16" cy="-19.6" r="2.1"/><circle cx="17.2" cy="-25.6" r="2.1"/><circle cx="42" cy="-28.8" r="2.1"/><circle cx="35.8" cy="-28" r="2.1"/><circle cx="29.6" cy="-27.2" r="2.1"/><circle cx="28.4" cy="-21.2" r="2.1"/><circle cx="27.2" cy="-15.2" r="2.1"/><circle cx="33.4" cy="-16" r="2.1"/><circle cx="39.6" cy="-16.8" r="2.1"/><circle cx="38.4" cy="-10.8" r="2.1"/><circle cx="37.2" cy="-4.8" r="2.1"/><circle cx="31" cy="-4" r="2.1"/><circle cx="24.8" cy="-3.2" r="2.1"/></g></svg><span>Vasu Solanky</span></a>
+    <ul class="nav-links">
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-resume" href="resume.pdf" type="application/pdf">Résumé</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M12 3.75a8.25 8.25 0 0 0 0 16.5z" fill="currentColor" />
+        </svg>
+      </button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- chrome:nav:end -->
+
+  <!-- chrome:menu:start -->
+  <nav class="mob-menu" id="mobMenu" aria-label="Mobile">
+    <a href="projects.html" class="mob-item">Work</a>
+    <a href="index.html#experience" class="mob-item">Experience</a>
+    <a href="index.html#about" class="mob-item">About</a>
+    <a href="index.html#contact" class="mob-item">Contact</a>
+    <a href="resume.pdf" class="mob-item mob-item-resume" type="application/pdf">Résumé (PDF)</a>
+  </nav>
+  <!-- chrome:menu:end -->
+
+  <main id="main" tabindex="-1">
+    <header class="page-head">
+      <div class="container">
+        <p class="eyebrow">~/work</p>
+        <h1 class="page-title">Projects</h1>
+        <p class="page-lead">Three builds from my B.Tech in data science: computer vision, an LLM application and a document pipeline. Each card opens a short brief on what it does and how it’s built.</p>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="featured-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title" id="featured-title">Featured</h2>
+        </header>
+        <ul class="card-grid">
+          <li>
+            <article class="proj-card">
+              <span class="proj-glyph" aria-hidden="true"><!-- glyph:movie-genre-classifier:start --><svg class="glyph-svg" focusable="false" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".8"><path opacity="0.12" d="M134 158.3L128.1 129.4M104.8 151.7L98 141.5M74.8 144.9L70.4 135.2M128.1 129.4L119.5 121.2M128.1 129.4L122.2 100.9M128.1 129.4L98.9 122.5M98.9 122.5L92.7 114.8M98.9 122.5L93.1 93.7M69 115.4L65.2 108.2M150.5 108L144.6 80.1M150.5 108L122.2 100.9M122.2 100.9L114.1 95.1M122.2 100.9L116.4 72.7M122.2 100.9L93.1 93.7M93.1 93.7L87.4 88.4M93.1 93.7L87.4 65.2M63.4 86.2L60.1 81.5M144.6 80.1L116.4 72.7M116.4 72.7L108.8 69.2M116.4 72.7L110.6 44.9M116.4 72.7L87.4 65.2M87.4 65.2L57.8 57.5M98 141.5L92.7 114.8M98 141.5L70.4 135.2M70.4 135.2L65.2 108.2M119.5 121.2L114.1 95.1M119.5 121.2L92.7 114.8M92.7 114.8L87.4 88.4M92.7 114.8L65.2 108.2M65.2 108.2L60.1 81.5M114.1 95.1L108.8 69.2M114.1 95.1L87.4 88.4M87.4 88.4L60.1 81.5"/><path opacity="0.22" d="M177.5 124.7L162.7 115.5M170.1 90.8L156.1 84.9M162.9 57.4L149.7 54.8M129.1 48.2L119 46.4M112.9 164L104.8 151.7M112.9 164L106.4 131.8M112.9 164L79.9 156.7M79.9 156.7L74.8 144.9M79.9 156.7L73.6 124.1M46.1 149.1L44 137.9M138.3 139.3L128.1 129.4M138.3 139.3L131.8 107.9M138.3 139.3L106.4 131.8M106.4 131.8L98.9 122.5M106.4 131.8L100 100M106.4 131.8L73.6 124.1M73.6 124.1L69 115.4M73.6 124.1L67.4 91.9M39.9 116.1L38.4 108.1M162.7 115.5L150.5 108M162.7 115.5L156.1 84.9M162.7 115.5L131.8 107.9M131.8 107.9L122.2 100.9M131.8 107.9L125.3 76.9M131.8 107.9L100 100M100 100L93.1 93.7M100 100L93.7 68.7M100 100L67.4 91.9M67.4 91.9L63.4 86.2M67.4 91.9L61.2 60.2M67.4 91.9L33.8 83.6M33.8 83.6L32.9 78.6M156.1 84.9L144.6 80.1M156.1 84.9L149.7 54.8M156.1 84.9L125.3 76.9M125.3 76.9L116.4 72.7M125.3 76.9L119 46.4M125.3 76.9L93.7 68.7M93.7 68.7L87.4 65.2M93.7 68.7L87.5 37.8M93.7 68.7L61.2 60.2M61.2 60.2L57.8 57.5M149.7 54.8L119 46.4M119 46.4L110.6 44.9M119 46.4L87.5 37.8M134 158.3L104.8 151.7M104.8 151.7L98.9 122.5M104.8 151.7L74.8 144.9M74.8 144.9L69 115.4M74.8 144.9L44 137.9M44 137.9L38.4 108.1M98.9 122.5L69 115.4M69 115.4L63.4 86.2M69 115.4L38.4 108.1M38.4 108.1L32.9 78.6M93.1 93.7L63.4 86.2M63.4 86.2L57.8 57.5M63.4 86.2L32.9 78.6"/><path opacity="0.34" d="M141.7 50.4L129.1 48.2M86.3 171.1L79.9 156.7M86.3 171.1L79.2 134.7M150.8 151.2L138.3 139.3M150.8 151.2L143.5 116.3M150.8 151.2L115.5 143.1M115.5 143.1L106.4 131.8M115.5 143.1L108.4 107.7M115.5 143.1L79.2 134.7M79.2 134.7L73.6 124.1M79.2 134.7L72.2 98.9M41.7 126L39.9 116.1M177.5 124.7L170.1 90.8M177.5 124.7L143.5 116.3M143.5 116.3L131.8 107.9M143.5 116.3L136.2 82M143.5 116.3L108.4 107.7M108.4 107.7L100 100M108.4 107.7L101.3 73M108.4 107.7L72.2 98.9M72.2 98.9L67.4 91.9M72.2 98.9L65.3 63.6M72.2 98.9L34.9 89.7M34.9 89.7L33.8 83.6M170.1 90.8L162.9 57.4M170.1 90.8L136.2 82M136.2 82L125.3 76.9M136.2 82L129.1 48.2M136.2 82L101.3 73M101.3 73L93.7 68.7M101.3 73L94.4 38.7M101.3 73L65.3 63.6M65.3 63.6L61.2 60.2M65.3 63.6L58.6 29M162.9 57.4L129.1 48.2M129.1 48.2L94.4 38.7M94.4 38.7L87.5 37.8M94.4 38.7L58.6 29M79.9 156.7L46.1 149.1M46.1 149.1L39.9 116.1M73.6 124.1L39.9 116.1M39.9 116.1L33.8 83.6"/><path opacity="0.48" d="M86.2 148L79.2 134.7M86.2 148L78.3 107.6M158 126.9L143.5 116.3M158 126.9L149.7 88.3M158 126.9L118.8 117.4M118.8 117.4L108.4 107.7M118.8 117.4L110.8 78.3M118.8 117.4L78.3 107.6M78.3 107.6L72.2 98.9M78.3 107.6L70.5 67.9M149.7 88.3L136.2 82M149.7 88.3L141.7 50.4M149.7 88.3L110.8 78.3M110.8 78.3L101.3 73M110.8 78.3L102.9 39.8M110.8 78.3L70.5 67.9M70.5 67.9L65.3 63.6M141.7 50.4L102.9 39.8M102.9 39.8L94.4 38.7M79.2 134.7L41.7 126M41.7 126L34.9 89.7"/></g><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path opacity="0.25" d="M134 158.3h0M104.8 151.7h0M74.8 144.9h0M44 137.9h0M128.1 129.4h0M98.9 122.5h0M69 115.4h0M38.4 108.1h0M150.5 108h0M122.2 100.9h0M93.1 93.7h0M63.4 86.2h0M32.9 78.6h0M144.6 80.1h0M116.4 72.7h0M87.4 65.2h0M57.8 57.5h0M110.6 44.9h0M98 141.5h0M70.4 135.2h0M119.5 121.2h0M92.7 114.8h0M65.2 108.2h0M114.1 95.1h0M87.4 88.4h0M60.1 81.5h0M108.8 69.2h0"/><path opacity="0.45" d="M150.8 151.2h0M177.5 124.7h0M143.5 116.3h0M170.1 90.8h0M136.2 82h0M101.3 73h0M162.9 57.4h0M129.1 48.2h0M94.4 38.7h0M112.9 164h0M79.9 156.7h0M46.1 149.1h0M138.3 139.3h0M106.4 131.8h0M73.6 124.1h0M39.9 116.1h0M162.7 115.5h0M131.8 107.9h0M100 100h0M67.4 91.9h0M33.8 83.6h0M156.1 84.9h0M125.3 76.9h0M93.7 68.7h0M61.2 60.2h0M149.7 54.8h0M119 46.4h0M87.5 37.8h0"/><path opacity="0.7" d="M86.2 148h0M158 126.9h0M118.8 117.4h0M78.3 107.6h0M149.7 88.3h0M110.8 78.3h0M70.5 67.9h0M141.7 50.4h0M102.9 39.8h0M86.3 171.1h0M115.5 143.1h0M79.2 134.7h0M41.7 126h0M108.4 107.7h0M72.2 98.9h0M34.9 89.7h0M65.3 63.6h0M58.6 29h0"/></g><path d="M108.4 107.7L115.5 143.1L106.4 131.8L112.9 164L79.9 156.7L46.1 149.1L44 137.9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="108.4" cy="107.7" r="3.4"/><circle cx="44" cy="137.9" r="3.4"/></svg><!-- glyph:movie-genre-classifier:end --></span>
+              <p class="proj-card-cat">Computer vision · multi-label classification</p>
+              <h3 class="proj-card-title"><a href="projects/movie-genre-classifier.html">Movie genre classification from posters</a></h3>
+              <p class="proj-card-desc">Upload a movie poster and get back its predicted genres, each with a confidence score, from a CNN built in TensorFlow/Keras behind a Flask web app.</p>
+              <ul class="tags" aria-label="Stack"><li>Python</li><li>TensorFlow/Keras</li><li>CNN</li><li>Flask</li><li>Computer vision</li></ul>
+              <p class="proj-card-more" aria-hidden="true">Project brief →</p>
+            </article>
+          </li>
+          <li>
+            <article class="proj-card">
+              <span class="proj-glyph" aria-hidden="true"><!-- glyph:meeting-summarizer:start --><svg class="glyph-svg" focusable="false" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".8"><path opacity="0.12" d="M139.4 144.9L109.9 141.1M134.5 126L107.4 122.6M134.5 126L129.1 99.5M134.5 126L133.5 116M133.5 116L104 112.3M129.1 99.5L102 96.1M129.1 99.5L123.6 73M129.1 99.5L127.6 87.2M127.6 87.2L98.2 83.5M127.6 87.2L121.7 58.3M123.6 73L96.6 69.7M123.6 73L121.7 58.3M121.7 58.3L92.3 54.8M109.9 141.1L80.5 137.3M109.9 141.1L104 112.3M107.4 122.6L80.4 119.1M107.4 122.6L102 96.1M107.4 122.6L104 112.3M104 112.3L74.7 108.6M104 112.3L98.2 83.5M102 96.1L75.1 92.7M102 96.1L96.6 69.7M102 96.1L98.2 83.5M98.2 83.5L68.9 79.9M98.2 83.5L92.3 54.8M96.6 69.7L92.3 54.8M92.3 54.8L63 51.2M86.4 166.1L80.5 137.3M80.5 137.3L51.3 133.5M80.5 137.3L74.7 108.6M80.4 119.1L75.1 92.7M80.4 119.1L74.7 108.6M74.7 108.6L45.5 104.8M74.7 108.6L68.9 79.9M75.1 92.7L68.9 79.9M68.9 79.9L39.7 76.2M68.9 79.9L63 51.2M51.3 133.5L45.5 104.8M45.5 104.8L39.7 76.2"/><path opacity="0.22" d="M163.2 119.8L133.5 116M163.2 119.8L157.2 90.8M163.2 119.8L164.9 108.2M164.9 108.2L132.4 104.1M164.9 108.2L158.4 76.4M157.2 90.8L127.6 87.2M157.2 90.8L151.3 61.9M157.2 90.8L158.4 76.4M158.4 76.4L125.9 72.4M158.4 76.4L151.9 44.7M151.3 61.9L121.7 58.3M151.3 61.9L151.9 44.7M151.9 44.7L119.4 40.8M139.4 144.9L133.5 116M139.4 144.9L138.8 135.8M138.8 135.8L106.4 131.6M138.8 135.8L132.4 104.1M133.5 116L127.6 87.2M133.5 116L132.4 104.1M132.4 104.1L100 100M132.4 104.1L125.9 72.4M127.6 87.2L125.9 72.4M125.9 72.4L93.6 68.4M125.9 72.4L119.4 40.8M121.7 58.3L119.4 40.8M119.4 40.8L87.1 36.9M112.9 163.3L80.7 159M112.9 163.3L106.4 131.6M109.9 141.1L106.4 131.6M106.4 131.6L74.2 127.5M106.4 131.6L100 100M104 112.3L100 100M100 100L67.8 96M100 100L93.6 68.4M98.2 83.5L93.6 68.4M93.6 68.4L61.4 64.5M93.6 68.4L87.1 36.9M92.3 54.8L87.1 36.9M86.4 166.1L80.7 159M80.7 159L48.6 154.8M80.7 159L74.2 127.5M80.5 137.3L74.2 127.5M74.2 127.5L42.2 123.3M74.2 127.5L67.8 96M74.7 108.6L67.8 96M67.8 96L35.9 91.9M67.8 96L61.4 64.5M68.9 79.9L61.4 64.5M48.6 154.8L42.2 123.3M51.3 133.5L42.2 123.3M42.2 123.3L35.9 91.9M45.5 104.8L35.9 91.9"/><path opacity="0.34" d="M174.3 129.3L138.1 124.7M174.3 129.3L167 94M164.9 108.2L167 94M167 94L130.9 89.5M167 94L159.8 58.9M158.4 76.4L159.8 58.9M159.8 58.9L123.8 54.5M145.3 159.9L109.4 155.1M145.3 159.9L138.1 124.7M138.8 135.8L138.1 124.7M138.1 124.7L102.2 120.1M138.1 124.7L130.9 89.5M132.4 104.1L130.9 89.5M130.9 89.5L95.1 85.1M130.9 89.5L123.8 54.5M125.9 72.4L123.8 54.5M123.8 54.5L88 50.1M123.8 54.5L116.6 19.5M119.4 40.8L116.6 19.5M112.9 163.3L109.4 155.1M109.4 155.1L73.7 150.5M109.4 155.1L102.2 120.1M106.4 131.6L102.2 120.1M102.2 120.1L66.6 115.5M102.2 120.1L95.1 85.1M100 100L95.1 85.1M95.1 85.1L59.5 80.6M95.1 85.1L88 50.1M93.6 68.4L88 50.1M88 50.1L52.4 45.8M80.7 159L73.7 150.5M73.7 150.5L38.2 145.8M73.7 150.5L66.6 115.5M74.2 127.5L66.6 115.5M66.6 115.5L31.2 111M66.6 115.5L59.5 80.6M67.8 96L59.5 80.6M59.5 80.6L24.2 76.2M59.5 80.6L52.4 45.8M61.4 64.5L52.4 45.8M48.6 154.8L38.2 145.8M38.2 145.8L31.2 111M42.2 123.3L31.2 111M31.2 111L24.2 76.2M35.9 91.9L24.2 76.2"/><path opacity="0.48" d="M138.1 124.7L137.2 110.9M137.2 110.9L97 105.8M137.2 110.9L129.2 71.5M130.9 89.5L129.2 71.5M129.2 71.5L89 66.6M109.4 155.1L105 145.1M105 145.1L65.1 139.9M105 145.1L97 105.8M102.2 120.1L97 105.8M97 105.8L57.1 100.7M97 105.8L89 66.6M95.1 85.1L89 66.6M89 66.6L49.2 61.7M73.7 150.5L65.1 139.9M65.1 139.9L57.1 100.7M66.6 115.5L57.1 100.7M57.1 100.7L49.2 61.7M59.5 80.6L49.2 61.7"/></g><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path opacity="0.25" d="M163.2 119.8h0M157.2 90.8h0M151.3 61.9h0M139.4 144.9h0M134.5 126h0M133.5 116h0M129.1 99.5h0M127.6 87.2h0M123.6 73h0M121.7 58.3h0M109.9 141.1h0M107.4 122.6h0M104 112.3h0M102 96.1h0M98.2 83.5h0M96.6 69.7h0M92.3 54.8h0M86.4 166.1h0M80.5 137.3h0M80.4 119.1h0M74.7 108.6h0M75.1 92.7h0M68.9 79.9h0M63 51.2h0M51.3 133.5h0M45.5 104.8h0M39.7 76.2h0"/><path opacity="0.45" d="M164.9 108.2h0M158.4 76.4h0M151.9 44.7h0M138.8 135.8h0M132.4 104.1h0M125.9 72.4h0M119.4 40.8h0M112.9 163.3h0M106.4 131.6h0M100 100h0M93.6 68.4h0M87.1 36.9h0M80.7 159h0M74.2 127.5h0M67.8 96h0M61.4 64.5h0M52.4 45.8h0M48.6 154.8h0M38.2 145.8h0M42.2 123.3h0M31.2 111h0M35.9 91.9h0M24.2 76.2h0"/><path opacity="0.7" d="M174.3 129.3h0M167 94h0M159.8 58.9h0M145.3 159.9h0M138.1 124.7h0M137.2 110.9h0M130.9 89.5h0M129.2 71.5h0M123.8 54.5h0M116.6 19.5h0M109.4 155.1h0M105 145.1h0M102.2 120.1h0M97 105.8h0M95.1 85.1h0M89 66.6h0M88 50.1h0M73.7 150.5h0M65.1 139.9h0M66.6 115.5h0M57.1 100.7h0M59.5 80.6h0M49.2 61.7h0"/></g><path d="M104 112.3L107.4 122.6L80.4 119.1L75.1 92.7L102 96.1L129.1 99.5L127.6 87.2" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="104" cy="112.3" r="3.4"/><circle cx="127.6" cy="87.2" r="3.4"/></svg><!-- glyph:meeting-summarizer:end --></span>
+              <p class="proj-card-cat">LLM application · AWS</p>
+              <h3 class="proj-card-title"><a href="projects/meeting-summarizer.html">AI meeting summarizer and action tracker</a></h3>
+              <p class="proj-card-desc">Turns meeting transcripts into concise summaries, key decisions and actionable tasks. React front end, FastAPI back end, OpenAI API, on AWS.</p>
+              <ul class="tags" aria-label="Stack"><li>Python</li><li>FastAPI</li><li>React</li><li>OpenAI API</li><li>AWS</li></ul>
+              <p class="proj-card-more" aria-hidden="true">Project brief →</p>
+            </article>
+          </li>
+          <li>
+            <article class="proj-card">
+              <span class="proj-glyph" aria-hidden="true"><!-- glyph:document-intelligence:start --><svg class="glyph-svg" focusable="false" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".8"><path opacity="0.12" d="M102 117L111.9 118.5M102 117L107.7 92.4M54.3 107.9L60.4 108.6M54.3 107.9L59.2 81.7M54.3 107.9L81.4 100M81.4 100L89.9 100M81.4 100L86.9 74.1M81.4 100L107.7 92.4M107.7 92.4L118.3 91.8M107.7 92.4L113.7 66.7M59.2 81.7L65.9 79.9M59.2 81.7L64.3 54.2M59.2 81.7L86.9 74.1M86.9 74.1L96.1 71.7M86.9 74.1L92.6 46.9M86.9 74.1L113.7 66.7M113.7 66.7L125.1 63.7M64.3 54.2L92.6 46.9M105.7 143.9L116.6 147.9M105.7 143.9L111.9 118.5M55.1 135.8L84 127M84 127L89.9 100M84 127L111.9 118.5M111.9 118.5L118.3 91.8M111.9 118.5L138.8 110.2M138.8 110.2L152.8 111.2M138.8 110.2L145.8 83.8M89.9 100L118.3 91.8M118.3 91.8L125.1 63.7M118.3 91.8L145.8 83.8"/><path opacity="0.22" d="M64.3 54.2L71.8 49.8M92.6 46.9L102.6 41.9M55.1 135.8L61.8 139.2M55.1 135.8L60.4 108.6M84 127L93.3 129.5M111.9 118.5L123.6 120.2M29.9 117.4L34.3 119.2M29.9 117.4L34.7 88.5M29.9 117.4L60.4 108.6M60.4 108.6L67.8 109.4M60.4 108.6L65.9 79.9M60.4 108.6L89.9 100M89.9 100L100 100M89.9 100L96.1 71.7M118.3 91.8L131 91M145.8 83.8L160.8 82.2M34.7 88.5L39.8 87.3M34.7 88.5L39.8 58M34.7 88.5L65.9 79.9M65.9 79.9L74.1 77.9M65.9 79.9L71.8 49.8M65.9 79.9L96.1 71.7M96.1 71.7L107.1 68.8M96.1 71.7L102.6 41.9M96.1 71.7L125.1 63.7M125.1 63.7L138.8 60.1M125.1 63.7L132.2 34.3M39.8 58L71.8 49.8M71.8 49.8L102.6 41.9M102.6 41.9L114.6 35.9M102.6 41.9L132.2 34.3M86.9 157.5L97.2 163.4M86.9 157.5L93.3 129.5M86.9 157.5L116.6 147.9M116.6 147.9L129.6 152.7M116.6 147.9L123.6 120.2M116.6 147.9L145.2 138.6M145.2 138.6L160.8 142.4M145.2 138.6L152.8 111.2M61.8 139.2L67.8 109.4M61.8 139.2L93.3 129.5M93.3 129.5L104.5 132.6M93.3 129.5L100 100M93.3 129.5L123.6 120.2M123.6 120.2L137.8 122.2M123.6 120.2L131 91M123.6 120.2L152.8 111.2M152.8 111.2L169.7 112.3M152.8 111.2L160.8 82.2M67.8 109.4L100 100M100 100L107.1 68.8M100 100L131 91M131 91L138.8 60.1M131 91L160.8 82.2M160.8 82.2L179 80.4M107.1 68.8L138.8 60.1M129.6 152.7L160.8 142.4M160.8 142.4L169.7 112.3"/><path opacity="0.34" d="M39.8 58L45.6 53.5M71.8 49.8L80.8 44.5M61.8 139.2L69.9 143.4M34.3 119.2L39.7 121.3M34.3 119.2L39.8 87.3M34.3 119.2L67.8 109.4M67.8 109.4L76.8 110.4M67.8 109.4L74.1 77.9M100 100L112.3 100M131 91L146.4 90M39.8 87.3L46 85.8M39.8 87.3L45.6 53.5M39.8 87.3L74.1 77.9M74.1 77.9L84.1 75.3M74.1 77.9L80.8 44.5M74.1 77.9L107.1 68.8M107.1 68.8L120.6 65.3M107.1 68.8L114.6 35.9M138.8 60.1L155.5 55.7M45.6 53.5L80.8 44.5M80.8 44.5L114.6 35.9M63.4 174.5L69.9 143.4M63.4 174.5L97.2 163.4M97.2 163.4L109.8 170.6M97.2 163.4L104.5 132.6M97.2 163.4L129.6 152.7M129.6 152.7L145.6 158.6M129.6 152.7L137.8 122.2M69.9 143.4L76.8 110.4M69.9 143.4L104.5 132.6M104.5 132.6L118.5 136.5M104.5 132.6L112.3 100M104.5 132.6L137.8 122.2M137.8 122.2L155.2 124.8M137.8 122.2L146.4 90M137.8 122.2L169.7 112.3M169.7 112.3L179 80.4M76.8 110.4L112.3 100M112.3 100L120.6 65.3M112.3 100L146.4 90M146.4 90L155.5 55.7M146.4 90L179 80.4M120.6 65.3L155.5 55.7"/><path opacity="0.48" d="M80.8 44.5L92 37.9M69.9 143.4L80 148.7M39.7 121.3L46 85.8M39.7 121.3L76.8 110.4M76.8 110.4L88.1 111.7M76.8 110.4L84.1 75.3M112.3 100L127.7 100M146.4 90L165.4 88.8M46 85.8L84.1 75.3M84.1 75.3L96.8 72.1M84.1 75.3L92 37.9M84.1 75.3L120.6 65.3M109.8 170.6L118.5 136.5M109.8 170.6L145.6 158.6M145.6 158.6L155.2 124.8M80 148.7L88.1 111.7M80 148.7L118.5 136.5M118.5 136.5L127.7 100M118.5 136.5L155.2 124.8M155.2 124.8L165.4 88.8M88.1 111.7L96.8 72.1M88.1 111.7L127.7 100M127.7 100L165.4 88.8"/></g><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path opacity="0.25" d="M102 117h0M54.3 107.9h0M81.4 100h0M107.7 92.4h0M59.2 81.7h0M86.9 74.1h0M113.7 66.7h0M64.3 54.2h0M92.6 46.9h0M105.7 143.9h0M55.1 135.8h0M84 127h0M111.9 118.5h0M138.8 110.2h0M29.9 117.4h0M60.4 108.6h0M89.9 100h0M118.3 91.8h0M145.8 83.8h0M65.9 79.9h0M96.1 71.7h0M125.1 63.7h0M132.2 34.3h0M86.9 157.5h0M116.6 147.9h0M145.2 138.6h0M152.8 111.2h0"/><path opacity="0.45" d="M34.7 88.5h0M39.8 58h0M71.8 49.8h0M102.6 41.9h0M61.8 139.2h0M93.3 129.5h0M123.6 120.2h0M34.3 119.2h0M67.8 109.4h0M100 100h0M131 91h0M160.8 82.2h0M39.8 87.3h0M74.1 77.9h0M107.1 68.8h0M138.8 60.1h0M45.6 53.5h0M80.8 44.5h0M114.6 35.9h0M63.4 174.5h0M97.2 163.4h0M129.6 152.7h0M160.8 142.4h0M69.9 143.4h0M104.5 132.6h0M137.8 122.2h0M169.7 112.3h0M146.4 90h0M179 80.4h0"/><path opacity="0.7" d="M39.7 121.3h0M76.8 110.4h0M112.3 100h0M46 85.8h0M84.1 75.3h0M120.6 65.3h0M155.5 55.7h0M92 37.9h0M109.8 170.6h0M145.6 158.6h0M80 148.7h0M118.5 136.5h0M155.2 124.8h0M88.1 111.7h0M127.7 100h0M165.4 88.8h0M96.8 72.1h0"/></g><path d="M131 91L118.3 91.8L107.7 92.4L81.4 100L89.9 100L60.4 108.6L65.9 79.9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="131" cy="91" r="3.4"/><circle cx="65.9" cy="79.9" r="3.4"/></svg><!-- glyph:document-intelligence:end --></span>
+              <p class="proj-card-cat">Document AI · serverless</p>
+              <h3 class="proj-card-title"><a href="projects/document-intelligence.html">Cloud-based document intelligence system</a></h3>
+              <p class="proj-card-desc">A serverless pipeline that extracts structured information from invoices and PDFs with AWS Textract and Lambda: 94% field-level accuracy across 2,000+ documents.</p>
+              <ul class="tags" aria-label="Stack"><li>Python</li><li>AWS S3</li><li>AWS Lambda</li><li>Textract</li><li>Flask</li></ul>
+              <p class="proj-card-more" aria-hidden="true">Project brief →</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- chrome:footer:start -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-id">
+        <a class="footer-logo" href="index.html"><svg class="footer-mark" focusable="false" viewBox="-5.1 -33.9 52.2 39" fill="currentColor" aria-hidden="true"><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="2.1"/><circle cx="3.6" cy="-18" r="2.1"/><circle cx="2.4" cy="-12" r="2.1"/><circle cx="1.2" cy="-6" r="2.1"/><circle cx="6.2" cy="-0.8" r="2.1"/><circle cx="13.6" cy="-7.6" r="2.1"/><circle cx="14.8" cy="-13.6" r="2.1"/><circle cx="16" cy="-19.6" r="2.1"/><circle cx="17.2" cy="-25.6" r="2.1"/><circle cx="42" cy="-28.8" r="2.1"/><circle cx="35.8" cy="-28" r="2.1"/><circle cx="29.6" cy="-27.2" r="2.1"/><circle cx="28.4" cy="-21.2" r="2.1"/><circle cx="27.2" cy="-15.2" r="2.1"/><circle cx="33.4" cy="-16" r="2.1"/><circle cx="39.6" cy="-16.8" r="2.1"/><circle cx="38.4" cy="-10.8" r="2.1"/><circle cx="37.2" cy="-4.8" r="2.1"/><circle cx="31" cy="-4" r="2.1"/><circle cx="24.8" cy="-3.2" r="2.1"/></g></svg><span>Vasu Solanky</span></a>
+        <p class="footer-copy">© <span data-year>2026</span> Vasu Solanky · B.Tech CSE (Data Science) · Amity University ’27</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h2 class="footer-h">Contact</h2>
+          <ul>
+            <li><a href="mailto:solankyvasu@gmail.com">solankyvasu@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/vasu-solanky85a85a24b" rel="me">LinkedIn</a></li>
+            <li><a href="resume.pdf" type="application/pdf">Résumé (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- chrome:footer:end -->
+
+  <script src="site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "vasu-solanky-portfolio",
+  "private": true,
+  "description": "Dev-only quality checks for the static portfolio. Nothing here is part of the deployed site.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "lint:html": "node scripts/gate.mjs --only=html",
+    "lint:css": "node scripts/gate.mjs --only=css",
+    "check:chrome": "node scripts/gate.mjs --only=chrome",
+    "check:links": "node scripts/gate.mjs --only=links",
+    "check:a11y": "node scripts/gate.mjs --only=a11y",
+    "check:lh": "node scripts/gate.mjs --only=lighthouse",
+    "check": "node scripts/gate.mjs",
+    "check:baseline": "node scripts/gate.mjs --write-baseline",
+    "check:ratchet": "node scripts/gate.mjs --ratchet",
+    "check:final": "node scripts/gate.mjs --final",
+    "check:browsers": "node scripts/gate.mjs --only=browsers",
+    "gen:marks": "node scripts/gen-marks.mjs",
+    "gen:poster": "node scripts/gen-hero-poster.mjs",
+    "gen:og": "node scripts/gen-og.mjs",
+    "gen:grain": "node scripts/gen-grain.mjs",
+    "set:url": "node scripts/set-site-url.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.14.0",
+    "chrome-launcher": "1.2.2",
+    "html-validate": "11.16.4",
+    "lighthouse": "13.5.0",
+    "linkinator": "8.1.0",
+    "playwright": "1.64.1",
+    "puppeteer-core": "25.14.0",
+    "stylelint": "17.16.0",
+    "stylelint-config-standard": "40.0.0"
+  }
+}

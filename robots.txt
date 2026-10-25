@@ -1,0 +1,5 @@
+# Served from the site root. Once the site has its address, run
+#   node scripts/set-site-url.mjs https://example.com/
+# to write sitemap.xml and add its Sitemap line here.
+User-agent: *
+Allow: /

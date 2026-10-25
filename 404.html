@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    /* GitHub Pages serves this page at any missing URL, so relative links
+       must resolve from the site root: / on a custom domain and locally,
+       /<repo>/ on a username.github.io project site. */
+    (() => {
+      const base = document.createElement('base');
+      const project = location.hostname.endsWith('.github.io') && location.pathname.match(/^\/[^/]+\//);
+      base.href = project ? project[0] : '/';
+      document.head.prepend(base);
+    })();
+  </script>
+  <script>
+    /* Apply the saved or system theme before first paint (see site.js). */
+    (() => {
+      let theme = null;
+      try { theme = localStorage.getItem('theme'); } catch { /* storage blocked */ }
+      if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <title>Page not found — Vasu Solanky</title>
+  <meta name="description" content="This address doesn’t exist on Vasu Solanky’s site. Head back to the work or the home page." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vasu Solanky, data science and machine learning: B.Tech CSE (Data Science), Amity University ’27" />
+  <meta property="og:site_name" content="Vasu Solanky" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- chrome:nav:start -->
+  <nav class="nav scrolled" id="nav" data-solid aria-label="Primary">
+    <a href="index.html" class="nav-logo"><svg class="nav-mark" focusable="false" viewBox="-5.1 -33.9 52.2 39" fill="currentColor" aria-hidden="true"><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="2.1"/><circle cx="3.6" cy="-18" r="2.1"/><circle cx="2.4" cy="-12" r="2.1"/><circle cx="1.2" cy="-6" r="2.1"/><circle cx="6.2" cy="-0.8" r="2.1"/><circle cx="13.6" cy="-7.6" r="2.1"/><circle cx="14.8" cy="-13.6" r="2.1"/><circle cx="16" cy="-19.6" r="2.1"/><circle cx="17.2" cy="-25.6" r="2.1"/><circle cx="42" cy="-28.8" r="2.1"/><circle cx="35.8" cy="-28" r="2.1"/><circle cx="29.6" cy="-27.2" r="2.1"/><circle cx="28.4" cy="-21.2" r="2.1"/><circle cx="27.2" cy="-15.2" r="2.1"/><circle cx="33.4" cy="-16" r="2.1"/><circle cx="39.6" cy="-16.8" r="2.1"/><circle cx="38.4" cy="-10.8" r="2.1"/><circle cx="37.2" cy="-4.8" r="2.1"/><circle cx="31" cy="-4" r="2.1"/><circle cx="24.8" cy="-3.2" r="2.1"/></g></svg><span>Vasu Solanky</span></a>
+    <ul class="nav-links">
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-resume" href="resume.pdf" type="application/pdf">Résumé</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M12 3.75a8.25 8.25 0 0 0 0 16.5z" fill="currentColor" />
+        </svg>
+      </button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- chrome:nav:end -->
+
+  <!-- chrome:menu:start -->
+  <nav class="mob-menu" id="mobMenu" aria-label="Mobile">
+    <a href="projects.html" class="mob-item">Work</a>
+    <a href="index.html#experience" class="mob-item">Experience</a>
+    <a href="index.html#about" class="mob-item">About</a>
+    <a href="index.html#contact" class="mob-item">Contact</a>
+    <a href="resume.pdf" class="mob-item mob-item-resume" type="application/pdf">Résumé (PDF)</a>
+  </nav>
+  <!-- chrome:menu:end -->
+
+  <main id="main" tabindex="-1">
+    <section class="not-found" aria-labelledby="nf-title">
+      <div class="container not-found-inner">
+        <div class="not-found-mark" aria-hidden="true"><svg class="not-found-svg" focusable="false" viewBox="-10.4 -38.6 62.8 48.4" fill="currentColor" aria-hidden="true"><g opacity=".32"><circle cx="-7.4" cy="6.8" r="0.6"/><circle cx="-6.2" cy="0.8" r="0.6"/><circle cx="-5" cy="-5.2" r="0.6"/><circle cx="-3.8" cy="-11.2" r="0.6"/><circle cx="-2.6" cy="-17.2" r="0.6"/><circle cx="-1.4" cy="-23.2" r="0.6"/><circle cx="-0.2" cy="-29.2" r="0.6"/><circle cx="-1.2" cy="6" r="0.6"/><circle cx="0" cy="0" r="0.6"/><circle cx="6" cy="-30" r="0.6"/><circle cx="5" cy="5.2" r="0.6"/><circle cx="7.4" cy="-6.8" r="0.6"/><circle cx="8.6" cy="-12.8" r="0.6"/><circle cx="9.8" cy="-18.8" r="0.6"/><circle cx="11" cy="-24.8" r="0.6"/><circle cx="12.2" cy="-30.8" r="0.6"/><circle cx="11.2" cy="4.4" r="0.6"/><circle cx="12.4" cy="-1.6" r="0.6"/><circle cx="18.4" cy="-31.6" r="0.6"/><circle cx="17.4" cy="3.6" r="0.6"/><circle cx="18.6" cy="-2.4" r="0.6"/><circle cx="19.8" cy="-8.4" r="0.6"/><circle cx="21" cy="-14.4" r="0.6"/><circle cx="22.2" cy="-20.4" r="0.6"/><circle cx="23.4" cy="-26.4" r="0.6"/><circle cx="24.6" cy="-32.4" r="0.6"/><circle cx="23.6" cy="2.8" r="0.6"/><circle cx="26" cy="-9.2" r="0.6"/><circle cx="30.8" cy="-33.2" r="0.6"/><circle cx="29.8" cy="2" r="0.6"/><circle cx="32.2" cy="-10" r="0.6"/><circle cx="34.6" cy="-22" r="0.6"/><circle cx="37" cy="-34" r="0.6"/><circle cx="36" cy="1.2" r="0.6"/><circle cx="40.8" cy="-22.8" r="0.6"/><circle cx="43.2" cy="-34.8" r="0.6"/><circle cx="42.2" cy="0.4" r="0.6"/><circle cx="43.4" cy="-5.6" r="0.6"/><circle cx="44.6" cy="-11.6" r="0.6"/><circle cx="45.8" cy="-17.6" r="0.6"/><circle cx="47" cy="-23.6" r="0.6"/><circle cx="48.2" cy="-29.6" r="0.6"/><circle cx="49.4" cy="-35.6" r="0.6"/></g><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="1.45"/><circle cx="3.6" cy="-18" r="1.45"/><circle cx="2.4" cy="-12" r="1.45"/><circle cx="1.2" cy="-6" r="1.45"/><circle cx="6.2" cy="-0.8" r="1.45"/><circle cx="13.6" cy="-7.6" r="1.45"/><circle cx="14.8" cy="-13.6" r="1.45"/><circle cx="16" cy="-19.6" r="1.45"/><circle cx="17.2" cy="-25.6" r="1.45"/><circle cx="42" cy="-28.8" r="1.45"/><circle cx="35.8" cy="-28" r="1.45"/><circle cx="29.6" cy="-27.2" r="1.45"/><circle cx="28.4" cy="-21.2" r="1.45"/><circle cx="27.2" cy="-15.2" r="1.45"/><circle cx="33.4" cy="-16" r="1.45"/><circle cx="39.6" cy="-16.8" r="1.45"/><circle cx="38.4" cy="-10.8" r="1.45"/><circle cx="37.2" cy="-4.8" r="1.45"/><circle cx="31" cy="-4" r="1.45"/><circle cx="24.8" cy="-3.2" r="1.45"/></g></svg></div>
+        <p class="eyebrow">~/404</p>
+        <h1 class="page-title" id="nf-title">Nothing at this address</h1>
+        <p class="page-lead">The page you asked for doesn’t exist, or it moved when the site was rebuilt. Everything that was here is still one click away.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="index.html">Go home</a>
+          <a class="btn btn-secondary" href="projects.html">See the work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- chrome:footer:start -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-id">
+        <a class="footer-logo" href="index.html"><svg class="footer-mark" focusable="false" viewBox="-5.1 -33.9 52.2 39" fill="currentColor" aria-hidden="true"><path d="M4.8 -24L1.2 -6L6.2 -0.8L13.6 -7.6L17.2 -25.6M42 -28.8L29.6 -27.2L27.2 -15.2L39.6 -16.8L37.2 -4.8L24.8 -3.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g><circle cx="4.8" cy="-24" r="2.1"/><circle cx="3.6" cy="-18" r="2.1"/><circle cx="2.4" cy="-12" r="2.1"/><circle cx="1.2" cy="-6" r="2.1"/><circle cx="6.2" cy="-0.8" r="2.1"/><circle cx="13.6" cy="-7.6" r="2.1"/><circle cx="14.8" cy="-13.6" r="2.1"/><circle cx="16" cy="-19.6" r="2.1"/><circle cx="17.2" cy="-25.6" r="2.1"/><circle cx="42" cy="-28.8" r="2.1"/><circle cx="35.8" cy="-28" r="2.1"/><circle cx="29.6" cy="-27.2" r="2.1"/><circle cx="28.4" cy="-21.2" r="2.1"/><circle cx="27.2" cy="-15.2" r="2.1"/><circle cx="33.4" cy="-16" r="2.1"/><circle cx="39.6" cy="-16.8" r="2.1"/><circle cx="38.4" cy="-10.8" r="2.1"/><circle cx="37.2" cy="-4.8" r="2.1"/><circle cx="31" cy="-4" r="2.1"/><circle cx="24.8" cy="-3.2" r="2.1"/></g></svg><span>Vasu Solanky</span></a>
+        <p class="footer-copy">© <span data-year>2026</span> Vasu Solanky · B.Tech CSE (Data Science) · Amity University ’27</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h2 class="footer-h">Contact</h2>
+          <ul>
+            <li><a href="mailto:solankyvasu@gmail.com">solankyvasu@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/vasu-solanky85a85a24b" rel="me">LinkedIn</a></li>
+            <li><a href="resume.pdf" type="application/pdf">Résumé (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- chrome:footer:end -->
+
+  <script src="site.js" defer></script>
+</body>
+</html>
